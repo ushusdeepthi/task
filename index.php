@@ -20,9 +20,9 @@ $number = 5;
         <div id="personal_details">
             <form action="question.php?n=1" method="POST" class="form">
                 <label for="">Name</label><br>
-                <input type="text" name="name" /><br>
+                <input type="text" name="name" required /><br>
                 <label for="">Number of questions</label><br>
-                <input type="text" name="total" /><br>
+                <input type="number" name="total" required /><br>
                 <button id="button">Start quiz</button>
             </form>
         </div>
