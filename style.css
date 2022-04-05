@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;900&display=swap");
 
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
 * {
     background-color: #ecf0ff;
     margin: 1%;
@@ -14,13 +19,9 @@ body {
     text-align: center;
 }
 
-/* #personal_details{
-    width:25%;
-    margin:0px auto;
-} */
 #personal_details {
     display: flex;
-    width: 50%;
+    width: 60%;
     flex-direction: column;
     margin: 0px auto;
     padding: 2.5rem;
@@ -68,11 +69,6 @@ body {
     text-align: center;
 }
 
-.question_no {
-    background-color: rgb(140, 133, 240);
-    box-shadow: 5px 5px 4px #888888;
-}
-
 #start_quiz:hover,
 .new_game:hover,
 #button:hover {
@@ -87,9 +83,16 @@ body {
     box-shadow: 0 5px #666;
     transform: translateY(2px);
 }
-.try_again{
+a.back_button, a.exit{
+    margin-top:2rem;
     padding: 0.75rem;
+    width:50%;
     box-shadow: 5px 5px 4px #888888;
     font-size: 1.2rem;
     border-radius: 5px;
+    text-decoration: none;
+    font-weight:bold;
+    display:flex;
+    justify-content:center;
+    margin:0 auto;
 }

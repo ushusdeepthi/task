@@ -66,7 +66,7 @@ if (isset($_POST['name'])) $_SESSION['name'] = $_POST['name'];
             <input type='hidden' value="<?php echo $number ?>" name="number">
         </ul>
     </form>
-    <a href="/index.php">Exit</a>
+    <a href="./index.php" class="back_button">Exit</a>
     <script src="app.js"></script>
 </body>
 

@@ -15,7 +15,7 @@
         <h2>Congrats you have completed the test</h2>
         <h3> Correct Answers: <?php echo $_SESSION['score'] ?> out of <?php echo $_SESSION['total'] ?></h3>
     </div>
-    <a href="index.php" class="button">Try again</a>
+    <a href="index.php" class="back_button">Try again</a>
     <?php session_destroy() ?>
 </body>
 
