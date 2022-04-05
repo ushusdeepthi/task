@@ -49,7 +49,7 @@ if (isset($_POST['name'])) $_SESSION['name'] = $_POST['name'];
         <ul class="choices">
             <input type='radio' id='monday' name='day' value='Monday'>
             <label for='monday'>Monday</label><br>
-            <input type='radio' id='css' name='day' value='Tuesday'>
+            <input type='radio' id='tuesday' name='day' value='Tuesday'>
             <label for='tuesday'>Tuesday</label><br>
             <input type='radio' id='wednesday' name='day' value='Wednesday'>
             <label for='wednesday'>Wednesday</label> <br />
