@@ -53,11 +53,11 @@ if ($number == 1) {
             <label for='saturday'>Saturday</label> <br />
             <input type='radio' id='sunday' name='day' value='sunday'>
             <label for='sunday'>sunday</label> <br />
-            <input type='button' id='submit' value='Submit' name="submit" onClick="check_data()">
-            <button type='button' id='log' name="log" onClick="check_data()" ;>Check</button>
+            <input type='button' id='submit' value='Submit' name="submit" onClick="check_data();">
+            <button type='button' id='log' name="log" onClick="check_data();">Check</button>
 
             <input type='hidden' value="<?php echo $number ?>" name="n" id="number">
-            <!-- <input type='hidden' id='submit' value="<?php echo $actual_day ?>" name="correct_answer"> -->
+
 
         </ul>
 
@@ -65,71 +65,37 @@ if ($number == 1) {
 
     <script>
         function check_data() {
-            var form_element = document.getElementsByClassName("form_data");
-
-            var form_data = new FormData();
-
-            //   for (var count = 0; count < form_element.length; count++) {
-            //     form_data.append(form_element[count].name, form_element[count].value);
-            //   }
-
             var day = document.getElementsByName("day");
             var number = document.getElementById("number").value;
             var selected = Array.from(day).find((item) => item.checked);
             console.log(selected.value, number);
             // document.getElementById("submit").disabled = true;
-            const postObj = {
-                number: number,
-                day: selected.value
-            };
-            var ajax_request = new XMLHttpRequest();
-            let post = JSON.stringify(postObj);
-
-
-            ajax_request.onreadystatechange = function() {
-                if (ajax_request.readyState == 4 && ajax_request.status == 200) {
-                    // document.getElementById("submit").disabled = false;
-
-                    // var response = JSON.parse(ajax_request.responseText);
-                    console.log(ajax_request.responseText);
-
-                    //   if (response.success != "") {
-                    //     document.getElementById("sample_form").reset();
-
-                    //     document.getElementById("message").innerHTML = response.success;
-
-                    //     setTimeout(function () {
-                    //       document.getElementById("message").innerHTML = "";
-                    //     }, 5000);
-
-                    //     document.getElementById("name_error").innerHTML = "";
-
-                    //     document.getElementById("email_error").innerHTML = "";
-
-                    //     document.getElementById("website_error").innerHTML = "";
-                    //     document.getElementById("comment_error").innerHTML = "";
-                    //     document.getElementById("gender_error").innerHTML = "";
+            // const postObj = {
+            //     number: number,
+            //     day: selected.value
+            // };
+            let fd = new FormData();
+            fd.append("number", number)
+            fd.append("day", selected.value);
+            fetch("process1.php", {
+                method: 'post',
+                body: fd,
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
                 }
-                // else {
-                //     //display validation error
-                //     document.getElementById("name_error").innerHTML = response.name_error;
-                //     document.getElementById("email_error").innerHTML = response.email_error;
-                //     document.getElementById("website_error").innerHTML =
-                //       response.website_error;
-                //     document.getElementById("comment_error").innerHTML =
-                //       response.comment_error;
-                //     document.getElementById("gender_error").innerHTML =
-                //       response.gender_error;
-                //   }
-                // }
-            };
-            ajax_request.open("POST", "process.php", true);
-            ajax_request.setRequestHeader(
-                "Content-type",
-                "application/json; charset=UTF-8"
-            );
+            }).then((response) => {
 
-            ajax_request.send(post);
+                return response.text()
+            }).then((data) => {
+
+                console.log(data)
+            }).then((res) => {
+                if (res.status === 201) {
+                    console.log("Post successfully created!")
+                }
+            }).catch((error) => {
+                // console.log(error)
+            })
         }
     </script>
 </body>

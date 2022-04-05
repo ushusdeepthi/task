@@ -16,7 +16,6 @@ $number = 5;
     <div id="header">
         <div id="welcome">
             <h1>Welcome to the Quiz game </h1>
-
         </div>
         <div id="personal_details">
             <form action="question.php?n=1" method="POST" class="form">
@@ -28,7 +27,6 @@ $number = 5;
             </form>
         </div>
     </div>
-    <!-- <a href="">start quiz</a> -->
 </body>
 
 </html>

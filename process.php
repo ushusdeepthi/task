@@ -17,8 +17,7 @@
     }
     if ($_POST) {
         $number = $_POST['number'];
-        $total = $_POST['total'];
-        echo $total;
+        $total = $_SESSION['total'];
         $selected_choice = $_POST['day'] ?? 'none selected';
         $next = $number + 1;
         $correct_answer = $_SESSION['correct_answer'];

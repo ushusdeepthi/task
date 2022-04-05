@@ -11,8 +11,10 @@
 </head>
 
 <body>
-    <h1>Congrats you have completed the test</h1>
-    <div><?php echo $_SESSION['score'] ?></div>
+    <div id="result">
+        <h3>Congrats you have completed the test</h3>
+        <h1> Correct Answers: <?php echo $_SESSION['score'] ?> out of <?php echo $_SESSION['total'] ?></h1>
+    </div>
     <a href="index.php" class="button">Try again</a>
     <?php session_destroy() ?>
 </body>
