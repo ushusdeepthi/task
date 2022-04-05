@@ -1,4 +1,6 @@
 # PHP Game App
+This is a Game app build with PHP where a random date is displayed and the uses guesses the correct day of the week.
+
 - Does not include any database or authentication information
 - No configurations need to be set before opening the application
 - The program can be opened in any web editor and can be run using a web server locally
